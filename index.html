@@ -1,0 +1,919 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#ffffff"><title>Sublimagic | Personaliza tu mundo</title><style>
+:root{--pink:#e70b8d;--mag:#b70b8d;--orange:#ff8124;--blue:#078fd4;--deep:#0757b7;--ink:#172033;--muted:#667085;--soft:#f7f9fc;--line:#e8ebf2;--green:#20b968}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:#fff}button,input,textarea,select{font:inherit}button{cursor:pointer}.wrap{width:min(1180px,92%);margin:auto}.nav{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.94);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}.navin{min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--ink)}.brand img{width:58px;height:58px;object-fit:contain;object-position:top}.brandText{font-weight:950;letter-spacing:-1px;font-size:21px}.brandText span{background:linear-gradient(90deg,var(--pink),var(--orange),var(--blue));-webkit-background-clip:text;color:transparent}.links{display:flex;gap:24px;align-items:center}.links a{text-decoration:none;color:var(--ink);font-weight:750;font-size:14px}.btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:14px;padding:12px 18px;font-weight:850;text-decoration:none}.primary{color:#fff;background:linear-gradient(110deg,var(--pink),var(--orange));box-shadow:0 10px 28px #e70b8d25}.ghost{background:#fff;border:1px solid var(--line);color:var(--ink)}.hero{position:relative;overflow:hidden;padding:72px 0 76px;background:radial-gradient(circle at 90% 10%,#e9f7ff 0,transparent 30%),radial-gradient(circle at 10% 80%,#fff0f8 0,transparent 32%),#fff}.heroGrid{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:54px}.eyebrow{display:inline-flex;padding:8px 12px;border-radius:999px;background:#fff4fa;border:1px solid #ffd9ec;color:var(--pink);font-size:13px;font-weight:850}h1{font-size:clamp(48px,7vw,84px);line-height:.96;letter-spacing:-4px;margin:18px 0}.grad{background:linear-gradient(95deg,var(--pink),var(--orange),var(--blue));-webkit-background-clip:text;color:transparent}.lead{font-size:18px;line-height:1.65;color:var(--muted);max-width:650px}.heroBtns{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.logoStage{min-height:430px;border-radius:38px;display:grid;place-items:center;padding:48px;background:#fff;border:1px solid #eef0f5;box-shadow:0 24px 70px #14213d12;position:relative;overflow:hidden}
+.logoStage:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 12% 18%,#e9178f12,transparent 30%),radial-gradient(circle at 88% 18%,#ff7b2812,transparent 30%),radial-gradient(circle at 80% 85%,#1596d214,transparent 30%);pointer-events:none}
+.logoStage:after{content:"";position:absolute;width:58%;height:6px;bottom:0;border-radius:999px;background:linear-gradient(90deg,var(--pink),var(--orange),var(--blue))}
+.logoStage img{width:min(560px,92%);max-height:310px;object-fit:contain;height:auto;position:relative;z-index:2;filter:drop-shadow(0 12px 22px #17203310)}.section{padding:76px 0}.head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:28px}.head h2{font-size:40px;letter-spacing:-1.6px;margin:0}.head p{margin:8px 0 0;color:var(--muted)}.services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.service{overflow:hidden;border:1px solid var(--line);border-radius:24px;background:#fff;box-shadow:0 12px 35px #0c23510b;transition:.25s}.service:hover{transform:translateY(-4px);box-shadow:0 20px 45px #0c235115}.serviceImg{aspect-ratio:1.42/1;background:#f2f5fa;overflow:hidden}.serviceImg img{width:100%;height:100%;display:block;object-fit:cover}.serviceBody{padding:18px 20px 22px}.service h3{margin:0 0 7px;font-size:20px}.service p{margin:0;color:var(--muted);line-height:1.5;font-size:14px}.catalog{background:var(--soft)}.toolbar{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:24px}.chip{border:1px solid var(--line);background:#fff;padding:10px 14px;border-radius:999px;font-weight:800}.chip.active{color:#fff;border-color:transparent;background:linear-gradient(100deg,var(--pink),var(--orange),var(--blue))}.products{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}.product{background:#fff;border-radius:28px;overflow:hidden;border:1px solid #edf0f5;box-shadow:0 14px 44px #14213d0d;display:flex;flex-direction:column;transition:transform .22s ease,box-shadow .22s ease}.product:hover{transform:translateY(-4px);box-shadow:0 22px 55px #14213d16}.pic{aspect-ratio:4/3;background:#fff;display:grid;place-items:center;overflow:hidden;padding:10px;position:relative}.pic img{width:100%;height:100%;object-fit:contain;display:block}.photoCount{position:absolute;right:12px;bottom:12px;background:#172033dd;color:#fff;border-radius:999px;padding:6px 9px;font-size:12px;font-weight:850}.noimg{font-size:48px;color:#d5d9e2}.info{padding:18px;display:flex;flex-direction:column;flex:1}.tag{font-size:12px;color:var(--blue);font-weight:900;text-transform:uppercase}.info h3{margin:7px 0;font-size:19px}.desc{color:var(--muted);font-size:14px;line-height:1.5;min-height:42px}.row{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:auto;padding-top:16px}.price{font-weight:950;font-size:18px}.view{background:#eef6ff;color:#0766b2;border:0;border-radius:12px;padding:10px 12px;font-weight:850}.contact{background:linear-gradient(115deg,var(--deep),var(--blue),var(--pink),var(--orange));color:#fff;border-radius:34px;padding:48px;display:flex;align-items:center;justify-content:space-between;gap:30px}.contact h2{font-size:38px;margin:0 0 8px}.contact p{margin:0;opacity:.92}.contact .btn{background:#fff;color:var(--ink)}footer{padding:32px 0;color:var(--muted);font-size:14px}.floatAdmin{position:fixed;right:18px;bottom:18px;z-index:35;background:var(--ink);color:#fff;border:0;border-radius:16px;padding:13px 17px;font-weight:850;box-shadow:0 15px 40px #0003}.modal{position:fixed;inset:0;background:#11182790;z-index:60;display:none;align-items:center;justify-content:center;padding:18px}.modal.open{display:flex}.panel{width:min(930px,100%);max-height:92vh;overflow:auto;background:#fff;border-radius:26px;padding:24px;box-shadow:0 30px 100px #0004}.panelTop{display:flex;align-items:center;justify-content:space-between;gap:15px}.panelTop h2{margin:0}.adminTabs{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}.adminTab{border:1px solid var(--line);background:#fff;padding:10px 14px;border-radius:999px;font-weight:850;color:var(--ink)}.adminTab.active{color:#fff;border-color:transparent;background:linear-gradient(100deg,var(--pink),var(--orange),var(--blue))}.adminSection{display:none}.adminSection.active{display:block}.profileBox{display:grid;grid-template-columns:220px 1fr;gap:22px;align-items:start}.logoPreview{min-height:220px;border:1px dashed #ccd2df;border-radius:20px;background:linear-gradient(145deg,#fff5fb,#fff8f0,#eef9ff);display:grid;place-items:center;padding:18px;overflow:hidden}.logoPreview img{max-width:100%;max-height:190px;object-fit:contain}.profileHelp{color:var(--muted);font-size:13px;line-height:1.55}.dangerText{color:#bd2044}@media(max-width:700px){}.close{border:0;background:#f3f4f6;width:40px;height:40px;border-radius:12px}.note{background:#f5f9ff;border:1px solid #dcecff;padding:12px 14px;border-radius:13px;color:#36506f;font-size:13px;margin:16px 0}.form{display:grid;grid-template-columns:1fr 1fr;gap:13px}.field{display:flex;flex-direction:column;gap:6px}.field.full{grid-column:1/-1}.field label{font-size:13px;font-weight:850}.field input,.field textarea,.field select{border:1px solid #dfe3eb;border-radius:12px;padding:12px;background:#fff;outline:none}.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--pink);box-shadow:0 0 0 3px #e70b8a12}.previews{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;min-height:110px;border:1px dashed #ccd2df;border-radius:14px;padding:9px;background:#fafbfc}.previews .empty{grid-column:1/-1;display:grid;place-items:center;color:var(--muted)}.thumb{aspect-ratio:1/1;border-radius:10px;overflow:hidden;background:#fff;border:1px solid var(--line);position:relative}.thumb img{width:100%;height:100%;object-fit:contain}.thumb button{position:absolute;right:4px;top:4px;width:24px;height:24px;border:0;border-radius:50%;background:#172033dd;color:#fff}.actions{display:flex;gap:10px;margin-top:15px;flex-wrap:wrap}.save{background:linear-gradient(100deg,var(--pink),var(--orange));color:#fff}.status{font-weight:850;font-size:13px;margin-top:10px}.adminList{margin-top:24px;border-top:1px solid var(--line);padding-top:18px}.adminItem{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--line)}.adminItem img{width:58px;height:58px;object-fit:contain;border-radius:10px;background:#fff;border:1px solid var(--line)}.adminItem .grow{flex:1}.adminItem strong{display:block}.mini{border:0;padding:8px 10px;border-radius:10px;font-weight:800}.edit{background:#edf6ff;color:#0766b2}.del{background:#fff0f3;color:#bd2044}.detailPanel{width:min(980px,100%);padding:0;overflow:hidden}.detailGrid{display:grid;grid-template-columns:1.1fr .9fr}.gallery{background:#f7f8fb;padding:20px;min-width:0}.mainPhoto{aspect-ratio:1/1;background:#fff;border-radius:20px;display:grid;place-items:center;overflow:hidden;position:relative}.mainPhoto img{width:100%;height:100%;object-fit:contain}.arrow{position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;border:0;border-radius:50%;background:#fff;box-shadow:0 5px 18px #0002;font-size:22px}.prev{left:12px}.next{right:12px}.dots{display:flex;gap:7px;justify-content:center;margin-top:12px}.dot{width:9px;height:9px;border:0;border-radius:50%;background:#cbd0da;padding:0}.dot.active{background:var(--pink)}.detailInfo{padding:34px;display:flex;flex-direction:column}.detailInfo h2{font-size:30px;margin:8px 0 10px}.detailInfo p{color:var(--muted);line-height:1.65}.detailPrice{font-size:24px;font-weight:950;margin:12px 0 22px}.detailClose{align-self:flex-end}.detailInfo .primary{margin-top:auto}.waFloat{position:fixed;left:18px;bottom:18px;z-index:34;background:var(--green);color:#fff;width:52px;height:52px;border-radius:50%;display:grid;place-items:center;text-decoration:none;font-weight:950;box-shadow:0 12px 35px #20b96845}
+@media(max-width:880px){.links a:not(.btn){display:none}.heroGrid{grid-template-columns:1fr}.logoStage{min-height:360px}.services,.products{grid-template-columns:1fr 1fr}.detailGrid{grid-template-columns:1fr}.gallery{padding:14px}.mainPhoto{aspect-ratio:4/3}.contact{flex-direction:column;align-items:flex-start}.form{grid-template-columns:1fr}}
+@media(max-width:700px){.profileBox{grid-template-columns:1fr}.logoPreview{min-height:180px}}@media(max-width:580px){.wrap{width:min(94%,1180px)}.navin{min-height:70px}.brand img{width:48px;height:48px}.brandText{font-size:18px}.links .btn{padding:10px 12px;font-size:12px}.hero{padding:48px 0 58px}h1{letter-spacing:-2.5px}.logoStage{min-height:260px;border-radius:28px;padding:30px 22px}.section{padding:56px 0}.head h2,.contact h2{font-size:31px}.services,.products{grid-template-columns:1fr}.serviceImg{aspect-ratio:1.55/1}.pic{aspect-ratio:1/1;padding:12px}.product{border-radius:20px}.contact{padding:30px}.previews{grid-template-columns:repeat(3,1fr)}.detailPanel{max-height:94vh;overflow:auto}.detailInfo{padding:24px}.mainPhoto{aspect-ratio:1/1}.floatAdmin{right:12px;bottom:12px;font-size:12px;padding:11px 13px}.waFloat{left:12px;bottom:12px}}
+
+/* V8 — catálogo visual */
+.productMedia,.productImage,.product-img{background:linear-gradient(145deg,#fff,#fafbfe);overflow:hidden}
+.productMedia img,.productImage img,.product-img img,.product>img{width:100%;height:100%;object-fit:contain;object-position:center;display:block}
+.productMedia,.productImage,.product-img{aspect-ratio:1/1;padding:14px}
+.productBody,.productInfo,.product-info{padding:18px 18px 20px}
+.product h3{font-size:18px;line-height:1.25;margin-bottom:7px}
+.product .price{font-weight:900;color:var(--pink)}
+.filters{gap:9px;flex-wrap:wrap}
+.filter{border:1px solid #eceef4;background:#fff;box-shadow:0 5px 18px #17203308}
+.filter.active{border-color:transparent;color:#fff;background:linear-gradient(100deg,var(--pink),var(--orange),var(--blue));box-shadow:0 10px 25px #e9178f24}
+.detailMain,.detail-main{background:#fff}
+.detailGallery,.detail-gallery{background:#fafbfe;border-radius:24px;overflow:hidden}
+.detailGallery img,.detail-gallery img{object-fit:contain;background:#fff}
+@media(max-width:580px){
+ .products{gap:16px}
+ .product{border-radius:22px}
+ .productMedia,.productImage,.product-img{aspect-ratio:4/5;padding:10px}
+ .productBody,.productInfo,.product-info{padding:15px 15px 17px}
+ .product h3{font-size:17px}
+ .filters{overflow-x:auto;flex-wrap:nowrap;padding-bottom:5px;scrollbar-width:none}
+ .filters::-webkit-scrollbar{display:none}
+ .filter{white-space:nowrap;flex:0 0 auto}
+}
+
+/* V10 — ambiente de marca y catálogo */
+body{position:relative;isolation:isolate;background:#fff}
+body:before,body:after{content:"";position:fixed;z-index:-2;border-radius:50%;filter:blur(90px);opacity:.16;pointer-events:none;will-change:transform}
+body:before{width:420px;height:420px;left:-140px;top:18%;background:linear-gradient(135deg,var(--pink),var(--orange));animation:ambientA 16s ease-in-out infinite alternate}
+body:after{width:520px;height:520px;right:-190px;top:52%;background:linear-gradient(135deg,var(--blue),var(--pink));animation:ambientB 20s ease-in-out infinite alternate}
+@keyframes ambientA{0%{transform:translate3d(0,0,0) scale(.9)}100%{transform:translate3d(90px,130px,0) scale(1.12)}}
+@keyframes ambientB{0%{transform:translate3d(0,0,0) scale(1)}100%{transform:translate3d(-100px,-120px,0) scale(.86)}}
+main,header,footer{position:relative}
+#catalogo{position:relative}
+#catalogo:before{content:"";position:absolute;inset:4% 0 auto 0;height:280px;z-index:-1;background:linear-gradient(90deg,#e9178f08,#ff7b2808,#1596d20a);filter:blur(34px);border-radius:50%}
+
+/* Product cards: image-first, simpler, cleaner */
+.products{grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.product{border-radius:26px;border:1px solid #eceef4;background:rgba(255,255,255,.92);box-shadow:0 12px 36px rgba(22,32,58,.08);overflow:hidden}
+.product:hover{transform:translateY(-5px);box-shadow:0 22px 52px rgba(22,32,58,.14)}
+.productMedia,.productImage,.product-img{aspect-ratio:4/3!important;padding:0!important;background:#f6f7fa!important;position:relative;overflow:hidden!important}
+.productMedia img,.productImage img,.product-img img,.product>img{width:100%!important;height:100%!important;object-fit:cover!important;object-position:center!important;transition:transform .45s ease}
+.product:hover .productMedia img,.product:hover .productImage img,.product:hover .product-img img,.product:hover>img{transform:scale(1.035)}
+.productMedia:after,.productImage:after,.product-img:after{content:"";position:absolute;inset:auto 0 0;height:28%;background:linear-gradient(transparent,rgba(15,22,40,.06));pointer-events:none}
+.productBody,.productInfo,.product-info{padding:16px 17px 18px!important}
+.product h3{font-size:17px!important;margin:0 0 5px!important}
+.product p{line-height:1.45}
+.product .price{font-size:17px}
+.product .btn,.product button{border-radius:13px}
+
+/* Product detail gallery feels more photographic */
+.detailGallery,.detail-gallery{background:#f5f6f9!important;border:1px solid #eceef4;border-radius:26px!important}
+.detailGallery img,.detail-gallery img{width:100%;height:100%;object-fit:contain!important;background:#f5f6f9!important}
+
+/* Header logo stands alone */
+.brand{gap:0!important}
+.brand img{margin-right:0!important}
+
+@media(max-width:900px){
+ .products{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:580px){
+ body:before{width:280px;height:280px;filter:blur(70px);opacity:.13}
+ body:after{width:320px;height:320px;filter:blur(75px);opacity:.13}
+ .products{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+ .product{border-radius:18px}
+ .productMedia,.productImage,.product-img{aspect-ratio:1/1!important}
+ .productBody,.productInfo,.product-info{padding:12px 12px 14px!important}
+ .product h3{font-size:15px!important}
+ .product .price{font-size:15px}
+ .product p{font-size:12px}
+}
+@media(max-width:390px){
+ .products{grid-template-columns:1fr}
+ .productMedia,.productImage,.product-img{aspect-ratio:4/3!important}
+}
+@media(prefers-reduced-motion:reduce){
+ body:before,body:after{animation:none}
+ .product,.product img{transition:none!important}
+}
+
+/* =========================================================
+   V11 FIX — estilos aplicados a las clases REALES del catálogo
+   ========================================================= */
+
+/* Fondo vivo visible: antes quedaba tapado por .catalog */
+.catalog{
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 8% 18%, rgba(233,23,143,.10), transparent 27%),
+    radial-gradient(circle at 91% 24%, rgba(21,150,210,.12), transparent 28%),
+    radial-gradient(circle at 55% 92%, rgba(255,123,40,.10), transparent 30%),
+    #fbfcff !important;
+  isolation:isolate;
+}
+.catalog::before,
+.catalog::after{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  pointer-events:none;
+  border-radius:50%;
+  filter:blur(38px);
+  opacity:.58;
+}
+.catalog::before{
+  width:380px;height:380px;
+  left:-130px;top:80px;
+  background:linear-gradient(135deg,rgba(233,23,143,.55),rgba(255,123,40,.38));
+  animation:sublimagicBlobOne 11s ease-in-out infinite alternate;
+}
+.catalog::after{
+  width:440px;height:440px;
+  right:-160px;bottom:-80px;
+  background:linear-gradient(135deg,rgba(21,150,210,.50),rgba(233,23,143,.32));
+  animation:sublimagicBlobTwo 14s ease-in-out infinite alternate;
+}
+.catalog .wrap{position:relative;z-index:1}
+@keyframes sublimagicBlobOne{
+  from{transform:translate3d(0,0,0) scale(.92)}
+  to{transform:translate3d(95px,85px,0) scale(1.13)}
+}
+@keyframes sublimagicBlobTwo{
+  from{transform:translate3d(0,0,0) scale(1.08)}
+  to{transform:translate3d(-110px,-70px,0) scale(.90)}
+}
+
+/* Catálogo: más limpio, fotografía protagonista */
+.products{
+  display:grid !important;
+  grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+  gap:22px !important;
+}
+.product{
+  border:1px solid rgba(225,229,238,.92) !important;
+  border-radius:24px !important;
+  background:rgba(255,255,255,.94) !important;
+  box-shadow:0 12px 36px rgba(23,32,51,.08) !important;
+  overflow:hidden !important;
+  transition:transform .25s ease,box-shadow .25s ease !important;
+}
+.product:hover{
+  transform:translateY(-5px) !important;
+  box-shadow:0 22px 50px rgba(23,32,51,.14) !important;
+}
+
+/* ESTA es la caja real de las fotos */
+.product .pic{
+  display:block !important;
+  position:relative !important;
+  width:100% !important;
+  aspect-ratio:4/3 !important;
+  height:auto !important;
+  padding:0 !important;
+  margin:0 !important;
+  overflow:hidden !important;
+  background:#f3f4f7 !important;
+  border:0 !important;
+  border-radius:0 !important;
+}
+.product .pic img{
+  display:block !important;
+  width:100% !important;
+  height:100% !important;
+  max-width:none !important;
+  object-fit:cover !important;
+  object-position:center !important;
+  transform:scale(1.001);
+  transition:transform .42s ease !important;
+}
+.product:hover .pic img{transform:scale(1.035)}
+.product .photoCount{
+  right:10px !important;
+  bottom:10px !important;
+  padding:6px 9px !important;
+  background:rgba(23,32,51,.82) !important;
+  backdrop-filter:blur(8px);
+}
+
+/* Texto: se conserva casi igual, solo compactamos un poco */
+.product .info{
+  padding:16px 17px 18px !important;
+}
+.product .desc{
+  min-height:0 !important;
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+}
+.product .row{padding-top:13px !important}
+
+/* En la ficha interior sí mostramos la foto COMPLETA */
+.mainPhoto{
+  background:#f4f5f8 !important;
+  border-radius:22px !important;
+}
+.mainPhoto img{
+  width:100% !important;
+  height:100% !important;
+  object-fit:contain !important;
+  object-position:center !important;
+}
+
+/* Móvil: una foto grande por tarjeta, sin verse apretada */
+@media(max-width:880px){
+  .products{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
+}
+@media(max-width:580px){
+  .catalog{padding-top:58px !important}
+  .products{
+    grid-template-columns:1fr !important;
+    gap:18px !important;
+  }
+  .product{border-radius:22px !important}
+  .product .pic{
+    aspect-ratio:16/11 !important;
+    min-height:0 !important;
+  }
+  .product .info{padding:15px 16px 17px !important}
+  .product .info h3{font-size:18px !important}
+  .catalog::before{width:270px;height:270px;filter:blur(32px)}
+  .catalog::after{width:300px;height:300px;filter:blur(34px)}
+}
+@media(prefers-reduced-motion:reduce){
+  .catalog::before,.catalog::after{animation:none !important}
+}
+
+
+/* V12 — FOTO GRANDE REAL EN EL CATÁLOGO */
+.products{align-items:start!important}
+.product{
+  display:flex!important;
+  flex-direction:column!important;
+  padding:0!important;
+}
+.product .pic{
+  width:100%!important;
+  height:320px!important;
+  min-height:320px!important;
+  aspect-ratio:auto!important;
+  padding:0!important;
+  margin:0!important;
+  display:block!important;
+  overflow:hidden!important;
+  background:#eef0f4!important;
+  border-radius:0!important;
+}
+.product .pic img{
+  position:static!important;
+  inset:auto!important;
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  min-width:100%!important;
+  min-height:100%!important;
+  max-width:none!important;
+  max-height:none!important;
+  margin:0!important;
+  padding:0!important;
+  object-fit:cover!important;
+  object-position:center!important;
+  border-radius:0!important;
+}
+.product .info{
+  flex:0 0 auto!important;
+  background:#fff!important;
+  padding:17px 18px 19px!important;
+}
+@media(max-width:880px){
+ .product .pic{height:280px!important;min-height:280px!important}
+}
+@media(max-width:580px){
+ .product .pic{
+   height:auto!important;
+   min-height:0!important;
+   aspect-ratio:4/3!important;
+ }
+ .product .pic img{
+   width:100%!important;
+   height:100%!important;
+ }
+}
+
+
+/* V13 — CARRITO (sin alterar el diseño base) */
+.cartFloat{position:fixed;right:22px;bottom:92px;z-index:80;width:58px;height:58px;border:0;border-radius:19px;background:#fff;box-shadow:0 14px 40px rgba(20,30,55,.18);display:grid;place-items:center;font-size:25px;cursor:pointer;border:1px solid #eceef4}
+.cartBadge{position:absolute;right:-5px;top:-5px;min-width:23px;height:23px;padding:0 6px;border-radius:999px;background:linear-gradient(100deg,var(--pink),var(--orange));color:#fff;font:800 12px/23px system-ui;text-align:center}
+.cartDrawer{position:fixed;inset:0;z-index:120;display:none;background:rgba(16,22,38,.28);backdrop-filter:blur(5px)}
+.cartDrawer.open{display:block}
+.cartPanel{position:absolute;right:0;top:0;height:100%;width:min(440px,100%);background:#fff;box-shadow:-20px 0 60px rgba(15,25,50,.18);padding:22px;display:flex;flex-direction:column}
+.cartHead{display:flex;justify-content:space-between;align-items:center;padding-bottom:16px;border-bottom:1px solid #eceef4}
+.cartHead h2{margin:0;font-size:24px}
+.cartClose{width:40px;height:40px;border-radius:50%;border:1px solid #e7e9ef;background:#fff;font-size:18px;cursor:pointer}
+.cartItems{flex:1;overflow:auto;padding:14px 2px}
+.cartEmpty{text-align:center;color:#7c8495;padding:60px 20px;line-height:1.55}
+.cartItem{display:grid;grid-template-columns:70px 1fr auto;gap:12px;padding:13px 0;border-bottom:1px solid #eef0f4;align-items:center}
+.cartItem img{width:70px;height:70px;border-radius:14px;object-fit:cover;background:#f3f4f7}
+.cartItem h4{margin:0 0 5px;font-size:14px}
+.cartItemPrice{font-size:13px;color:#697184}
+.qty{display:flex;align-items:center;gap:7px;margin-top:8px}
+.qty button{width:27px;height:27px;border-radius:9px;border:1px solid #e1e4eb;background:#fff;font-weight:800;cursor:pointer}
+.qty span{min-width:18px;text-align:center;font-weight:800;font-size:13px}
+.removeCart{border:0;background:none;color:#bd2044;cursor:pointer;font-size:12px;padding:4px}
+.cartFoot{border-top:1px solid #e8eaf0;padding-top:17px}
+.cartTotal{display:flex;justify-content:space-between;align-items:center;font-weight:900;font-size:20px;margin-bottom:14px}
+.cartWhats{width:100%;border:0;border-radius:16px;padding:15px 16px;background:#25D366;color:#fff;font-weight:900;font-size:15px;cursor:pointer}
+.cartWhats:disabled{opacity:.45;cursor:not-allowed}
+.addCartBtn{border:0;border-radius:12px;padding:10px 13px;background:linear-gradient(100deg,var(--pink),var(--orange),var(--blue));color:#fff;font-weight:850;cursor:pointer;margin-top:10px;width:100%}
+.addCartBtn.added{background:#168b55}
+@media(max-width:580px){.cartFloat{right:16px;bottom:84px}.cartPanel{padding:18px}.cartItem{grid-template-columns:62px 1fr auto}.cartItem img{width:62px;height:62px}}
+
+
+/* V14 — comportamiento corregido del carrito */
+.cartHead{
+  position:sticky!important;
+  top:0!important;
+  z-index:5!important;
+  background:#fff!important;
+  margin:-2px -2px 0!important;
+}
+.cartClose{
+  display:grid!important;
+  place-items:center!important;
+  flex:0 0 42px!important;
+  width:42px!important;
+  height:42px!important;
+  border:1px solid #dde1e9!important;
+  background:#fff!important;
+  color:#182033!important;
+  font-size:20px!important;
+  font-weight:900!important;
+  cursor:pointer!important;
+  box-shadow:0 5px 14px rgba(20,30,55,.08)!important;
+}
+.cartFloat{transition:transform .18s ease,box-shadow .18s ease}
+.cartFloat.cartPulse{animation:cartPulse .38s ease}
+@keyframes cartPulse{0%{transform:scale(1)}45%{transform:scale(1.16)}100%{transform:scale(1)}}
+.cartAddedToast{
+  position:fixed;right:22px;bottom:160px;z-index:110;
+  background:#172033;color:#fff;border-radius:13px;padding:10px 13px;
+  font-size:13px;font-weight:800;box-shadow:0 12px 30px rgba(20,30,55,.20);
+  opacity:0;transform:translateY(8px);pointer-events:none;
+  transition:opacity .18s ease,transform .18s ease
+}
+.cartAddedToast.show{opacity:1;transform:translateY(0)}
+@media(max-width:580px){.cartAddedToast{right:16px;bottom:150px}}
+
+
+/* V15 — carrito robusto */
+#cartDrawer{
+  position:fixed!important;inset:0!important;z-index:99999!important;
+  background:rgba(14,20,34,.34)!important;backdrop-filter:blur(5px);
+  display:none!important;
+}
+#cartDrawer.open{display:block!important}
+#cartDrawer .cartPanel{
+  position:absolute!important;right:0!important;top:0!important;
+  width:min(440px,100%)!important;height:100dvh!important;
+  background:#fff!important;display:flex!important;flex-direction:column!important;
+  padding:22px!important;overflow:hidden!important;
+  transform:none!important;opacity:1!important;visibility:visible!important;
+}
+#cartDrawer .cartHead{flex:0 0 auto!important}
+#cartDrawer .cartItems{flex:1 1 auto!important;overflow-y:auto!important}
+#cartDrawer .cartFoot{flex:0 0 auto!important;background:#fff!important}
+#cartClose{position:relative!important;z-index:100000!important}
+#cartFloat{z-index:9990!important}
+
+
+/* V16 — Instagram + local físico */
+.visitSection{padding:34px 20px 70px;background:transparent}
+.visitCard{display:flex;align-items:center;justify-content:space-between;gap:28px;padding:30px 32px;border:1px solid #eceef4;border-radius:28px;background:rgba(255,255,255,.94);box-shadow:0 14px 42px rgba(20,30,55,.08);position:relative;overflow:hidden}
+.visitCard:before{content:"";position:absolute;left:0;top:0;width:100%;height:5px;background:linear-gradient(90deg,var(--pink),var(--orange),var(--blue))}
+.visitText{max-width:680px;position:relative}
+.visitEyebrow{font-size:11px;letter-spacing:.16em;font-weight:900;color:var(--pink)}
+.visitText h2{margin:8px 0 8px;font-size:clamp(24px,3vw,36px)}
+.visitText p{margin:0;color:var(--muted);line-height:1.65}
+.visitActions{flex:0 0 auto}
+.instagramBtn{display:flex;align-items:center;justify-content:center;gap:9px;text-decoration:none;color:#fff;font-weight:900;padding:14px 20px;border-radius:15px;background:linear-gradient(115deg,#833ab4,#e1306c,#f77737);box-shadow:0 10px 26px rgba(225,48,108,.22);transition:transform .2s ease,box-shadow .2s ease}
+.instagramBtn:hover{transform:translateY(-2px);box-shadow:0 15px 34px rgba(225,48,108,.28)}
+.igIcon{font-size:22px;line-height:1}
+@media(max-width:700px){.visitSection{padding:25px 16px 55px}.visitCard{align-items:flex-start;flex-direction:column;padding:25px 22px}.visitActions,.instagramBtn{width:100%}}
+
+
+/* V17 — ubicación administrable + Instagram separado */
+.locationBtn{display:flex;align-items:center;justify-content:center;gap:9px;text-decoration:none;color:#fff;font-weight:900;padding:14px 20px;border-radius:15px;background:linear-gradient(110deg,var(--blue),#2576d9);box-shadow:0 10px 26px rgba(21,150,210,.20);transition:transform .2s ease,box-shadow .2s ease}
+.locationBtn:hover{transform:translateY(-2px);box-shadow:0 15px 34px rgba(21,150,210,.26)}
+.locationBtn.disabled{opacity:.55;pointer-events:none}
+.locationIcon{font-size:22px}
+.instagramSection{padding:0 20px 72px}
+.instagramMini{display:flex;align-items:center;justify-content:space-between;gap:22px;padding:20px 24px;border-radius:22px;background:#fff;border:1px solid #eceef4;box-shadow:0 10px 32px rgba(20,30,55,.06)}
+.instagramMini strong{display:block;font-size:18px;margin-bottom:4px}
+.instagramMini span{color:#737b8d;font-size:13px}
+.instagramMini .instagramBtn span{color:#fff}
+.locationAdminBox{margin-top:18px;padding:18px;border:1px solid #e8eaf0;border-radius:18px;background:#fafbfc}
+.locationAdminBox h3{margin:0 0 7px}
+.locationAdminBox p{margin:0 0 12px;color:#737b8d;font-size:13px;line-height:1.55}
+.locationAdminBox input{width:100%;box-sizing:border-box;border:1px solid #dfe3ea;border-radius:12px;padding:12px 13px;background:#fff;font:inherit}
+.locationAdminActions{display:flex;gap:9px;margin-top:10px;flex-wrap:wrap}
+.locationAdminActions button{border:0;border-radius:11px;padding:10px 14px;font-weight:800;cursor:pointer}
+#saveLocationBtn{background:linear-gradient(100deg,var(--pink),var(--orange));color:#fff}
+#clearLocationBtn{background:#eef0f4;color:#333b4d}
+@media(max-width:700px){.instagramSection{padding:0 16px 55px}.instagramMini{align-items:flex-start;flex-direction:column}.instagramMini .instagramBtn{width:100%;box-sizing:border-box}}
+
+
+/* V18 — Instagram movido a la navegación superior */
+.topInstagramBtn{
+  display:inline-flex;align-items:center;justify-content:center;
+  text-decoration:none;font-weight:800;
+  color:inherit;
+  padding:9px 12px;border-radius:12px;
+  transition:background .18s ease,color .18s ease,transform .18s ease
+}
+.topInstagramBtn:hover{
+  background:linear-gradient(115deg,#833ab4,#e1306c,#f77737);
+  color:#fff;transform:translateY(-1px)
+}
+@media(max-width:700px){
+  .topInstagramBtn{padding:8px 9px;font-size:13px}
+}
+
+
+/* V19 — Instagram dentro del menú principal, junto a Contacto y WhatsApp */
+.nav .links .topInstagramBtn{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  visibility:visible!important;
+  opacity:1!important;
+  white-space:nowrap!important;
+}
+
+
+/* V20 — Instagram editable desde Perfil / Logo */
+#saveInstagramBtn{background:linear-gradient(115deg,#833ab4,#e1306c,#f77737);color:#fff}
+#clearInstagramBtn{background:#eef0f4;color:#333b4d}
+.instagramAdminBox{margin-top:14px}
+
+
+/* V21 — Supabase cloud admin */
+.loginPanel{width:min(520px,100%)}
+.cloudLogin{padding-top:20px;display:grid;gap:13px}
+.cloudLogin .field input{border:1px solid #dfe3eb;border-radius:12px;padding:13px;background:#fff;outline:none}
+.cloudState{font-size:12px;font-weight:850;color:#07854a}
+
+</style></head><body>
+<nav class="nav"><div class="wrap navin"><a class="brand" href="#"><img id="navLogo" src="" alt="Sublimagic"></a><div class="links"><a href="#catalogo">Catálogo</a><a href="#contacto">Contacto</a><a class="topInstagramBtn" id="topInstagramLink" href="https://www.instagram.com/sublimagic_16/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Sublimagic">Instagram</a><a class="btn primary" href="https://wa.me/18092710255?text=Hola%20Sublimagic%2C%20quiero%20cotizar%20un%20producto." target="_blank">WhatsApp</a></div></div>
+</nav>
+<header class="hero"><div class="wrap heroGrid"><div><span class="eyebrow">Personalización hecha a tu estilo</span><h1>Hazlo <span class="grad">único.</span></h1><p class="lead">Convertimos tus ideas en productos personalizados con impresión 3D, sublimación, DTF, grabado láser y mucho más.</p><div class="heroBtns"><a class="btn primary" href="#catalogo">Ver catálogo</a><a class="btn ghost" href="https://wa.me/18092710255?text=Hola%20Sublimagic%2C%20quiero%20hacer%20una%20cotizaci%C3%B3n." target="_blank">Cotizar por WhatsApp</a></div></div><div class="logoStage"><img id="heroLogo" src="" alt="Logo Sublimagic"></div></div></header>
+
+<section class="section catalog" id="catalogo"><div class="wrap"><div class="head"><div><h2>Nuestro catálogo</h2><p>Toca un producto para ver todas sus fotos, descripción y detalles.</p></div></div><div class="toolbar" id="filters"></div><div class="products" id="products"></div></div></section>
+<section class="section" id="contacto"><div class="wrap"><div class="contact"><div><h2>¿Tienes una idea?</h2><p>Escríbenos y la convertimos en algo especial.</p></div><a class="btn" href="https://wa.me/18092710255?text=Hola%20Sublimagic%2C%20quiero%20personalizar%20un%20producto." target="_blank">Escribir al 809-271-0255</a></div></div></section>
+<section class="visitSection" id="visitanos">
+  <div class="wrap visitCard">
+    <div class="visitText">
+      <span class="visitEyebrow">SUBLIMAGIC · LA VEGA</span>
+      <h2>También puedes visitarnos</h2>
+      <p>Tenemos local físico en La Vega, República Dominicana, en la intersección de <strong>calle Las Carreras con Duvergé</strong>.</p>
+    </div>
+    <div class="visitActions">
+      <a class="locationBtn" id="locationBtn" href="#" target="_blank" rel="noopener noreferrer" aria-label="Ver ubicación de Sublimagic">
+        <span class="locationIcon">⌖</span><span>Ver ubicación</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
+<footer><div class="wrap">© 2026 Sublimagic · Personalización creativa</div></footer>
+<a class="waFloat" href="https://wa.me/18092710255" target="_blank" aria-label="WhatsApp">WA</a><button class="floatAdmin" id="openAdmin">⚙ Administrar catálogo</button>
+<div class="modal" id="adminModal"><div class="panel"><div class="panelTop"><div><h2>Administración de Sublimagic</h2><small style="color:var(--muted)">Administra tu logo y tu catálogo desde aquí.</small></div><div style="display:flex;gap:8px;align-items:center"><button class="mini edit" id="logoutAdmin" type="button">Salir</button><button class="close" id="closeAdmin">✕</button></div></div>
+<div class="adminTabs"><button class="adminTab active" type="button" data-admin-tab="productsAdmin">Productos</button><button class="adminTab" type="button" data-admin-tab="profileAdmin">Perfil / Logo</button></div>
+
+<section class="adminSection active" id="productsAdmin">
+<div class="note">Las fotos se optimizan automáticamente para que el catálogo cargue más rápido. Elige varias fotos a la vez; la primera será la portada.</div>
+<form id="productForm"><div class="form"><div class="field"><label>Nombre del producto *</label><input id="name" required placeholder="Ej. Stand Porsche GT3"></div><div class="field"><label>Precio</label><input id="price" placeholder="Ej. RD$1,500"></div><div class="field full"><label>Descripción</label><textarea id="description" rows="4" placeholder="Describe el producto, materiales, opciones, etc."></textarea></div><div class="field"><label>Categoría</label><select id="category"><option>Impresión 3D</option><option>Sublimación</option><option>Grabado láser</option><option>Otros</option></select></div><div class="field"><label>Fotos del producto (máx. 5)</label><input id="images" type="file" accept="image/*" multiple></div><div class="field full"><label>Vista previa · la primera foto será la portada</label><div class="previews" id="previews"><div class="empty">Selecciona una o varias fotos</div></div></div></div><div class="actions"><button class="btn save" type="submit" id="saveBtn">＋ Guardar producto</button><button class="btn ghost" type="button" id="cancelEdit" style="display:none">Cancelar edición</button><button class="btn ghost" type="button" id="exportBtn">Exportar respaldo</button><label class="btn ghost">Importar respaldo<input type="file" id="importFile" accept=".json" hidden></label></div><div class="status" id="status"></div></form><div class="adminList"><h3>Productos guardados</h3><div id="adminProducts"></div></div>
+</section>
+
+<section class="adminSection" id="profileAdmin">
+<div class="note">Aquí puedes colocar o cambiar el logo sin editar el código. El logo se mostrará arriba y en la portada de la página.
+<div class="locationAdminBox">
+  <h3>Ubicación del local</h3>
+  <p>Pega aquí el enlace de tu ubicación de Google Maps. Este enlace será el que abra el botón <b>Ver ubicación</b> de la página.</p>
+  <input id="locationUrlInput" type="url" placeholder="Ej.: https://maps.app.goo.gl/..." autocomplete="off">
+  <div class="locationAdminActions">
+    <button id="saveLocationBtn" type="button">Guardar ubicación</button>
+    <button id="clearLocationBtn" type="button">Quitar ubicación</button>
+  </div>
+</div>
+
+<div class="locationAdminBox instagramAdminBox">
+  <h3>Instagram</h3>
+  <p>Pega aquí el enlace completo de tu perfil de Instagram. Este será el enlace que abrirá el botón <b>Instagram</b> del menú principal.</p>
+  <input id="instagramUrlInput" type="url" placeholder="Ej.: https://www.instagram.com/tu_usuario/" autocomplete="off">
+  <div class="locationAdminActions">
+    <button id="saveInstagramBtn" type="button">Guardar Instagram</button>
+    <button id="clearInstagramBtn" type="button">Quitar enlace</button>
+  </div>
+</div>
+
+</div>
+<div class="profileBox">
+  <div class="logoPreview" id="logoPreview"><strong>Sin logo seleccionado</strong></div>
+  <div>
+    <div class="field"><label>Logo de Sublimagic</label><input id="logoInput" type="file" accept="image/png,image/jpeg,image/webp,image/svg+xml"></div>
+    <p class="profileHelp">Recomendado: PNG con fondo transparente. Para que la página siga rápida, el logo se optimiza antes de guardarlo.</p>
+    <div class="actions"><button class="btn save" type="button" id="saveLogoBtn">✓ Guardar logo</button><button class="btn ghost dangerText" type="button" id="removeLogoBtn">Quitar logo</button></div>
+    <div class="status" id="profileStatus"></div>
+  </div>
+</div>
+</section>
+
+
+</div></div>
+
+<div class="modal" id="loginModal"><div class="panel loginPanel">
+  <div class="panelTop"><div><h2>Acceso de administrador</h2><small style="color:var(--muted)">Inicia sesión para administrar el catálogo en la nube.</small></div><button class="close" id="closeLogin" type="button">✕</button></div>
+  <div class="cloudLogin">
+    <div class="field"><label>Correo</label><input id="adminEmail" type="email" autocomplete="username" placeholder="Tu correo de administrador"></div>
+    <div class="field"><label>Contraseña</label><input id="adminPassword" type="password" autocomplete="current-password" placeholder="Tu contraseña"></div>
+    <div class="actions">
+      <button class="btn save" id="loginBtn" type="button">Entrar</button>
+      <button class="btn ghost" id="createAccessBtn" type="button">Crear mi acceso</button>
+    </div>
+    <p class="profileHelp">La primera vez pulsa <b>Crear mi acceso</b>. Solo el correo autorizado de Sublimagic podrá modificar la base de datos.</p>
+    <div class="status" id="loginStatus"></div>
+  </div>
+</div></div>
+
+<div class="modal" id="detailModal"><div class="panel detailPanel"><div class="detailGrid"><div class="gallery"><div class="mainPhoto" id="mainPhoto"><button class="arrow prev" id="prevPhoto">‹</button><div class="noimg">S</div><button class="arrow next" id="nextPhoto">›</button></div><div class="dots" id="dots"></div></div><div class="detailInfo"><button class="close detailClose" id="closeDetail">✕</button><span class="tag" id="detailCat"></span><h2 id="detailName"></h2><p id="detailDesc"></p><div class="detailPrice" id="detailPrice"></div><a class="btn primary" id="detailWa" target="_blank">Pedir / Cotizar por WhatsApp</a></div></div></div></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const SUPABASE_URL='https://tunglnvqxionyottbzhi.supabase.co',SUPABASE_KEY='sb_publishable_guvLcUrCG7YN-Y7CU5ptRA_vGiV5S6k';
+const cloud=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY);
+const KEY='sublimagicCatalogV5',OLD='sublimagicCatalogV4',PROFILE_KEY='sublimagicProfileV6',CATS=['Todos','Impresión 3D','Sublimación','Grabado láser','Otros'];const $=s=>document.querySelector(s);let editIndex=-1,currentImages=[],detailIndex=-1,photoIndex=0,activeFilter='Todos',pendingLogo='';
+const defaults=[{name:'Stand para llaves Porsche GT3',price:'RD$1,500',description:'Diseño minimalista impreso en 3D para organizar tus llaves.',category:'Impresión 3D',images:[]},{name:'Termos personalizados',price:'Cotizar',description:'Personaliza tu termo con nombres, logos o diseños especiales.',category:'Sublimación',images:[]},{name:'Tazas personalizadas',price:'Cotizar',description:'Tazas personalizadas para regalos, empresas y ocasiones especiales.',category:'Sublimación',images:[]}];
+function normalize(arr){return (Array.isArray(arr)?arr:[]).map(p=>({...p,category:CATS.includes(p.category)?p.category:(p.category==='Personalizados'||p.category==='DTF / Textil'||p.category==='Tecnología'?'Otros':p.category||'Otros'),images:Array.isArray(p.images)?p.images:(p.image?[p.image]:[])}))}
+function load(){try{const v=localStorage.getItem(KEY);if(v)return normalize(JSON.parse(v));const old=localStorage.getItem(OLD);if(old){const migrated=normalize(JSON.parse(old));localStorage.setItem(KEY,JSON.stringify(migrated));return migrated}return defaults}catch{return defaults}}let products=load();
+function loadProfile(){try{return JSON.parse(localStorage.getItem(PROFILE_KEY)||'{}')}catch{return {}}}
+let profile=loadProfile();
+const SERVICES=[
+ {key:'service-3d',name:'Impresión 3D',fallback:'🧊'},
+ {key:'service-sublimation',name:'Sublimación',fallback:'☕'},
+ {key:'service-laser',name:'Grabado láser',fallback:'✦'},
+ {key:'service-dtf',name:'DTF & Uniformes',fallback:'👕'},
+ {key:'service-gifts',name:'Regalos personalizados',fallback:'🎁'},
+ {key:'service-tech',name:'Creatividad + tecnología',fallback:'⚡'}
+];
+profile.serviceImages=profile.serviceImages||{};
+let pendingServiceImages={};
+
+function setProfileStatus(t,error=false){const s=$('#profileStatus');if(!s)return;s.textContent=t;s.style.color=error?'#bd2044':'#07854a';clearTimeout(setProfileStatus.t);setProfileStatus.t=setTimeout(()=>{if(s.textContent===t)s.textContent=''},4500)}
+function renderLogo(){
+  const src=profile.logo||'';
+  const nav=$('#navLogo'),hero=$('#heroLogo'),preview=$('#logoPreview');
+  if(src){
+    nav.src=src;hero.src=src;nav.style.display='block';hero.style.display='block';
+    preview.innerHTML=`<img src="${src}" alt="Logo Sublimagic">`;
+  }else{
+    nav.removeAttribute('src');hero.removeAttribute('src');nav.style.display='none';hero.style.display='none';
+    preview.innerHTML='<strong>Sin logo seleccionado</strong>';
+  }
+}
+function compressLogo(file){return new Promise((resolve,reject)=>{if(file.type==='image/svg+xml'){const r=new FileReader();r.onerror=reject;r.onload=()=>resolve(r.result);r.readAsDataURL(file);return}const r=new FileReader();r.onerror=reject;r.onload=()=>{const img=new Image();img.onerror=reject;img.onload=()=>{const max=1400,scale=Math.min(1,max/Math.max(img.width,img.height)),c=document.createElement('canvas');c.width=Math.max(1,Math.round(img.width*scale));c.height=Math.max(1,Math.round(img.height*scale));const ctx=c.getContext('2d');ctx.clearRect(0,0,c.width,c.height);ctx.drawImage(img,0,0,c.width,c.height);resolve(c.toDataURL('image/png'))};img.src=r.result};r.readAsDataURL(file)})}
+function setServiceStatus(t,error=false){const s=$('#serviceStatus');if(!s)return;s.textContent=t;s.style.color=error?'#bd2044':'#07854a';clearTimeout(setServiceStatus.t);setServiceStatus.t=setTimeout(()=>{if(s.textContent===t)s.textContent=''},4500)}
+function serviceCurrentSrc(key){return pendingServiceImages[key]||profile.serviceImages[key]||''}
+function applyServiceImages(){
+ SERVICES.forEach(s=>{
+   const img=document.querySelector(`#img-${s.key}`);
+   const src=profile.serviceImages[s.key];
+   if(img&&src){img.src=src;img.style.display='block'}
+ });
+}
+function renderServiceAdmin(){
+ const box=$('#serviceAdminGrid');if(!box)return;
+ box.innerHTML=SERVICES.map(s=>{const src=serviceCurrentSrc(s.key);return `<div class="serviceEditor"><div class="serviceEditorTop"><div class="serviceAdminPreview" id="preview-${s.key}">${src?`<img src="${src}" alt="${s.name}">`:`<span>${s.fallback}</span>`}</div><div><h4>${s.name}</h4><p>Selecciona la foto que quieres mostrar para este servicio.</p><input type="file" accept="image/png,image/jpeg,image/webp" data-service-file="${s.key}"></div></div><div class="actions"><button class="btn save" type="button" data-service-save="${s.key}">Guardar imagen</button><button class="btn ghost dangerText" type="button" data-service-remove="${s.key}">Restablecer</button></div></div>`}).join('');
+ box.querySelectorAll('[data-service-file]').forEach(inp=>inp.onchange=async e=>{const key=inp.dataset.serviceFile,f=e.target.files[0];if(!f)return;setServiceStatus('Preparando imagen…');try{pendingServiceImages[key]=await compress(f,1000,.8);renderServiceAdmin();setServiceStatus('Imagen lista. Pulsa “Guardar imagen”.')}catch{setServiceStatus('No se pudo procesar esa imagen.',true)}});
+ box.querySelectorAll('[data-service-save]').forEach(btn=>btn.onclick=()=>{const key=btn.dataset.serviceSave;if(!pendingServiceImages[key])return setServiceStatus('Primero selecciona una imagen.',true);profile.serviceImages[key]=pendingServiceImages[key];delete pendingServiceImages[key];try{localStorage.setItem(PROFILE_KEY,JSON.stringify(profile));setServiceStatus('✓ Imagen del servicio guardada.')}catch{setServiceStatus('No se pudo guardar. Prueba con una imagen más pequeña.',true)}});
+ box.querySelectorAll('[data-service-remove]').forEach(btn=>btn.onclick=()=>{const key=btn.dataset.serviceRemove;delete profile.serviceImages[key];delete pendingServiceImages[key];localStorage.setItem(PROFILE_KEY,JSON.stringify(profile));renderServiceAdmin();location.reload()});
+}
+
+
+function persist(){try{localStorage.setItem(KEY,JSON.stringify(products));return true}catch(e){showStatus('El navegador se quedó sin espacio. Exporta un respaldo y usa menos fotos por producto.',true);return false}}
+function esc(s=''){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}function wa(p){return 'https://wa.me/18092710255?text='+encodeURIComponent('Hola Sublimagic, me interesa: '+p.name+(p.price?' ('+p.price+')':''));}
+function cover(p){return p.images&&p.images[0]?p.images[0]:''}
+function render(){document.querySelector('#filters').innerHTML=CATS.map(c=>`<button class="chip ${c===activeFilter?'active':''}" data-filter="${c}">${c}</button>`).join('');document.querySelectorAll('[data-filter]').forEach(b=>b.onclick=()=>{activeFilter=b.dataset.filter;render()});const list=products.map((p,i)=>({p,i})).filter(x=>activeFilter==='Todos'||x.p.category===activeFilter);$('#products').innerHTML=list.length?list.map(({p,i})=>`<article class="product"><button class="pic" onclick="openDetail(${i})" aria-label="Ver ${esc(p.name)}" style="border:0;width:100%">${cover(p)?`<img loading="lazy" src="${cover(p)}" alt="${esc(p.name)}">`:'<div class="noimg">S</div>'}${p.images?.length>1?`<span class="photoCount">${p.images.length} fotos</span>`:''}</button><div class="info"><span class="tag">${esc(p.category)}</span><h3>${esc(p.name)}</h3><div class="desc">${esc(p.description||'Producto personalizado por Sublimagic.')}</div><div class="row"><span class="price">${esc(p.price||'Cotizar')}</span><button class="view" onclick="openDetail(${i})">Ver producto</button></div></div></article>`).join(''):'<p>No hay productos en esta categoría.</p>';renderAdmin()}
+function renderAdmin(){$('#adminProducts').innerHTML=products.length?products.map((p,i)=>`<div class="adminItem">${cover(p)?`<img src="${cover(p)}">`:'<img alt="">'}<div class="grow"><strong>${esc(p.name)}</strong><small>${esc(p.price||'Cotizar')} · ${esc(p.category)} · ${p.images?.length||0} foto(s)</small></div><button class="mini edit" onclick="editProduct(${i})">Editar</button><button class="mini del" onclick="deleteProduct(${i})">Eliminar</button></div>`).join(''):'<p>Aún no has agregado productos.</p>'}
+function showStatus(t,error=false){const s=$('#status');s.textContent=t;s.style.color=error?'#bd2044':'#07854a';clearTimeout(showStatus.t);showStatus.t=setTimeout(()=>{if(s.textContent===t)s.textContent=''},4500)}
+function compress(file){return new Promise((resolve,reject)=>{const r=new FileReader();r.onerror=reject;r.onload=()=>{const img=new Image();img.onerror=reject;img.onload=()=>{const max=820,scale=Math.min(1,max/Math.max(img.width,img.height)),c=document.createElement('canvas');c.width=Math.max(1,Math.round(img.width*scale));c.height=Math.max(1,Math.round(img.height*scale));c.getContext('2d').drawImage(img,0,0,c.width,c.height);let out;try{out=c.toDataURL('image/webp',.72);if(!out.startsWith('data:image/webp'))out=c.toDataURL('image/jpeg',.72)}catch{out=c.toDataURL('image/jpeg',.72)}resolve(out)};img.src=r.result};r.readAsDataURL(file)})}
+function renderPreviews(){const box=$('#previews');box.innerHTML=currentImages.length?currentImages.map((src,i)=>`<div class="thumb"><img src="${src}"><button type="button" onclick="removePhoto(${i})">×</button></div>`).join(''):'<div class="empty">Selecciona una o varias fotos</div>'}
+$('#images').addEventListener('change',async e=>{const files=[...e.target.files].slice(0,5-currentImages.length);if(!files.length)return;showStatus('Optimizando fotos…');for(const f of files){try{currentImages.push(await compress(f))}catch{showStatus('Una foto no pudo procesarse.',true)}}renderPreviews();showStatus('Fotos listas para guardar.');e.target.value=''});window.removePhoto=i=>{currentImages.splice(i,1);renderPreviews()};
+$('#productForm').addEventListener('submit',async e=>{
+ e.preventDefault();
+ const {data:{session}}=await cloud.auth.getSession();
+ if(!session)return requireAdmin();
+ const name=$('#name').value.trim();
+ if(!name)return showStatus('Escribe el nombre del producto.',true);
+ showStatus('Guardando en la nube…');
+ try{
+   const uploaded=[];
+   for(let i=0;i<currentImages.length;i++){
+     const src=currentImages[i];
+     if(/^https?:\/\//i.test(src)){uploaded.push(src);continue}
+     const blob=await (await fetch(src)).blob();
+     const ext=blob.type.includes('png')?'png':blob.type.includes('webp')?'webp':'jpg';
+     const path=`products/${Date.now()}-${Math.random().toString(36).slice(2)}-${i}.${ext}`;
+     const {error:upErr}=await cloud.storage.from('catalog').upload(path,blob,{contentType:blob.type,upsert:false});
+     if(upErr)throw upErr;
+     uploaded.push(cloud.storage.from('catalog').getPublicUrl(path).data.publicUrl);
+   }
+   const label=$('#price').value.trim();
+   const numeric=Number((label.match(/[\d,.]+/)||['0'])[0].replace(/,/g,''))||0;
+   const payload={name,price:numeric,price_label:label,description:$('#description').value.trim(),category:$('#category').value,images:uploaded,active:true};
+   let err;
+   if(editIndex>=0 && products[editIndex]?.id){
+     ({error:err}=await cloud.from('products').update(payload).eq('id',products[editIndex].id));
+   }else{
+     ({error:err}=await cloud.from('products').insert(payload));
+   }
+   if(err)throw err;
+   resetForm();
+   await loadCloudProducts();
+   showStatus('✓ Producto guardado en la nube');
+ }catch(err){console.error(err);showStatus('No se pudo guardar: '+(err.message||'error desconocido'),true)}
+});
+function resetForm(){editIndex=-1;currentImages=[];$('#productForm').reset();renderPreviews();$('#saveBtn').textContent='＋ Guardar producto';$('#cancelEdit').style.display='none'}window.editProduct=i=>{const p=products[i];editIndex=i;currentImages=[...(p.images||[])];$('#name').value=p.name;$('#price').value=p.price||'';$('#description').value=p.description||'';$('#category').value=CATS.includes(p.category)?p.category:'Otros';renderPreviews();$('#saveBtn').textContent='✓ Guardar cambios';$('#cancelEdit').style.display='inline-flex';$('.panel').scrollTo({top:0,behavior:'smooth'})};
+window.deleteProduct=async i=>{
+ if(!confirm('¿Eliminar este producto?'))return;
+ const p=products[i];
+ try{
+   if(p.id){const {error}=await cloud.from('products').delete().eq('id',p.id);if(error)throw error}
+   else{products.splice(i,1);persist()}
+   await loadCloudProducts();showStatus('Producto eliminado.')
+ }catch(err){showStatus('No se pudo eliminar: '+(err.message||''),true)}
+};
+$('#cancelEdit').onclick=resetForm;
+window.openDetail=i=>{detailIndex=i;photoIndex=0;const p=products[i];$('#detailCat').textContent=p.category;$('#detailName').textContent=p.name;$('#detailDesc').textContent=p.description||'Producto personalizado por Sublimagic.';$('#detailPrice').textContent=p.price||'Cotizar';$('#detailWa').href=wa(p);renderGallery();$('#detailModal').classList.add('open')};function renderGallery(){const p=products[detailIndex],imgs=p?.images||[],main=$('#mainPhoto');const img=imgs[photoIndex];main.innerHTML=`<button class="arrow prev" id="prevPhoto">‹</button>${img?`<img src="${img}" alt="${esc(p.name)}">`:'<div class="noimg">S</div>'}<button class="arrow next" id="nextPhoto">›</button>`;$('#prevPhoto').style.display=$('#nextPhoto').style.display=imgs.length>1?'block':'none';$('#prevPhoto').onclick=()=>{photoIndex=(photoIndex-1+imgs.length)%imgs.length;renderGallery()};$('#nextPhoto').onclick=()=>{photoIndex=(photoIndex+1)%imgs.length;renderGallery()};$('#dots').innerHTML=imgs.length>1?imgs.map((_,i)=>`<button class="dot ${i===photoIndex?'active':''}" onclick="photoIndex=${i};renderGallery()"></button>`).join(''):''}
+$('#openAdmin').onclick=()=>requireAdmin();$('#closeAdmin').onclick=()=>$('#adminModal').classList.remove('open');$('#closeDetail').onclick=()=>$('#detailModal').classList.remove('open');document.querySelectorAll('.modal').forEach(m=>m.addEventListener('click',e=>{if(e.target===m)m.classList.remove('open')}));
+$('#exportBtn').onclick=()=>{const blob=new Blob([JSON.stringify(products,null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='sublimagic-catalogo-v6.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);showStatus('Respaldo exportado.')};$('#importFile').onchange=e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{const d=normalize(JSON.parse(r.result));products=d;persist();render();showStatus('Respaldo importado correctamente.')}catch{showStatus('El archivo no es válido.',true)}};r.readAsText(f)};
+document.querySelectorAll('.adminTab').forEach(tab=>tab.onclick=()=>{document.querySelectorAll('.adminTab').forEach(x=>x.classList.toggle('active',x===tab));document.querySelectorAll('.adminSection').forEach(x=>x.classList.toggle('active',x.id===tab.dataset.adminTab));if(tab.dataset.adminTab==='servicesAdmin')renderServiceAdmin()});
+$('#logoInput').onchange=async e=>{const f=e.target.files[0];if(!f)return;setProfileStatus('Preparando logo…');try{pendingLogo=await compressLogo(f);$('#logoPreview').innerHTML=`<img src="${pendingLogo}" alt="Vista previa del logo">`;setProfileStatus('Logo listo. Pulsa “Guardar logo”.')}catch{setProfileStatus('No se pudo procesar ese archivo.',true)}};
+$('#saveLogoBtn').onclick=()=>{if(!pendingLogo)return setProfileStatus('Primero selecciona una imagen para el logo.',true);profile.logo=pendingLogo;try{localStorage.setItem(PROFILE_KEY,JSON.stringify(profile));pendingLogo='';renderLogo();$('#logoInput').value='';setProfileStatus('✓ Logo guardado y aplicado a la página.')}catch{setProfileStatus('No se pudo guardar el logo. Prueba con una imagen más pequeña.',true)}};
+$('#removeLogoBtn').onclick=()=>{if(!profile.logo&&!pendingLogo)return;profile.logo='';pendingLogo='';localStorage.setItem(PROFILE_KEY,JSON.stringify(profile));$('#logoInput').value='';renderLogo();setProfileStatus('Logo eliminado.')};
+
+async function loadCloudProducts(){
+  try{
+    const {data,error}=await cloud.from('products').select('id,name,description,category,price,price_label,images,active,sort_order').order('sort_order',{ascending:true}).order('created_at',{ascending:false});
+    if(error)throw error;
+    if(data&&data.length){
+      products=data.map(p=>({...p,price:p.price_label||((Number(p.price)>0)?`RD$${Number(p.price).toLocaleString('en-US')}`:'Cotizar'),images:p.images||[]}));
+    }else{
+      products=[];
+    }
+    render();
+  }catch(err){console.error('Cloud load:',err);render()}
+}
+function loginStatus(t,error=false){const s=$('#loginStatus');if(!s)return;s.textContent=t;s.style.color=error?'#bd2044':'#07854a'}
+async function requireAdmin(){
+ const {data:{session}}=await cloud.auth.getSession();
+ if(session){$('#adminModal').classList.add('open');return}
+ $('#loginModal').classList.add('open');
+}
+$('#closeLogin').onclick=()=>$('#loginModal').classList.remove('open');
+$('#loginBtn').onclick=async()=>{
+ const email=$('#adminEmail').value.trim(),password=$('#adminPassword').value;
+ if(!email||!password)return loginStatus('Completa correo y contraseña.',true);
+ loginStatus('Entrando…');
+ const {error}=await cloud.auth.signInWithPassword({email,password});
+ if(error)return loginStatus(error.message,true);
+ $('#loginModal').classList.remove('open');$('#adminModal').classList.add('open');loginStatus('');
+};
+$('#createAccessBtn').onclick=async()=>{
+ const email=$('#adminEmail').value.trim(),password=$('#adminPassword').value;
+ if(!email||password.length<6)return loginStatus('Escribe tu correo y una contraseña de al menos 6 caracteres.',true);
+ loginStatus('Creando acceso…');
+ const {data,error}=await cloud.auth.signUp({email,password});
+ if(error)return loginStatus(error.message,true);
+ if(data.session){loginStatus('✓ Acceso creado.');$('#loginModal').classList.remove('open');$('#adminModal').classList.add('open')}
+ else loginStatus('✓ Revisa tu correo para confirmar la cuenta y luego pulsa Entrar.');
+};
+$('#logoutAdmin').onclick=async()=>{await cloud.auth.signOut();$('#adminModal').classList.remove('open')};
+
+renderLogo();render();loadCloudProducts();
+
+/* V13 carrito */
+const CART_KEY='sublimagicCartV13';
+let cart=[];
+try{cart=JSON.parse(localStorage.getItem(CART_KEY)||'[]')}catch{cart=[]}
+const moneyNumber=v=>{if(typeof v==='number')return v;const s=String(v||'').replace(/,/g,'');const m=s.match(/(\d+(?:\.\d+)?)/);return m?Number(m[1]):0};
+const money=v=>'RD$'+Number(v||0).toLocaleString('en-US',{maximumFractionDigits:2});
+function saveCart(){localStorage.setItem(CART_KEY,JSON.stringify(cart));renderCart()}
+function cartProductIndex(i){return products[i]||null}
+function addToCart(i){
+ const p=cartProductIndex(i);if(!p)return;
+ const found=cart.find(x=>x.productIndex===i);
+ if(found)found.qty+=1;
+ else cart.push({productIndex:i,name:p.name||'Producto',price:moneyNumber(p.price),priceLabel:p.price||'',image:(p.images&&p.images[0])||'',qty:1});
+ saveCart();showCartAdded();
+}
+function changeQty(k,d){if(!cart[k])return;cart[k].qty+=d;if(cart[k].qty<=0)cart.splice(k,1);saveCart()}
+function removeFromCart(k){cart.splice(k,1);saveCart()}
+function renderCart(){
+ const count=cart.reduce((a,x)=>a+x.qty,0),total=cart.reduce((a,x)=>a+(x.price*x.qty),0);
+ const badge=document.querySelector('#cartBadge'),box=document.querySelector('#cartItems'),tot=document.querySelector('#cartTotal'),wa=document.querySelector('#cartWhats');
+ if(badge)badge.textContent=count;
+ if(tot)tot.textContent=money(total);
+ if(wa)wa.disabled=!cart.length;
+ if(!box)return;
+ if(!cart.length){box.innerHTML='<div class="cartEmpty"><b>Tu carrito está vacío.</b><br>Agrega los productos que quieras pedir.</div>';return}
+ box.innerHTML=cart.map((x,k)=>`<div class="cartItem">${x.image?`<img src="${x.image}" alt="">`:`<div style="width:70px;height:70px;border-radius:14px;background:#f1f2f5"></div>`}<div><h4>${x.name}</h4><div class="cartItemPrice">${x.priceLabel||money(x.price)}</div><div class="qty"><button type="button" onclick="changeQty(${k},-1)">−</button><span>${x.qty}</span><button type="button" onclick="changeQty(${k},1)">+</button></div></div><button class="removeCart" type="button" onclick="removeFromCart(${k})">Eliminar</button></div>`).join('');
+}
+function openCartLegacy(){document.querySelector('#cartDrawer')?.classList.add('open')}
+function closeCartLegacy(){document.querySelector('#cartDrawer')?.classList.remove('open')}
+
+
+
+
+
+/* Inserta el botón en cada tarjeta después de que el catálogo se renderiza */
+function injectCartButtons(){
+ document.querySelectorAll('.product').forEach((card,i)=>{
+   if(card.querySelector('.addCartBtn'))return;
+   const info=card.querySelector('.info')||card;
+   const b=document.createElement('button');b.type='button';b.className='addCartBtn';b.textContent='＋ Agregar al carrito';
+   b.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();addToCart(i)});
+   info.appendChild(b);
+ });
+}
+const cartObserver=new MutationObserver(()=>injectCartButtons());
+const productsRoot=document.querySelector('.products');
+if(productsRoot)cartObserver.observe(productsRoot,{childList:true,subtree:true});
+setTimeout(injectCartButtons,0);
+renderCart();
+
+
+/* V14 — añadir sin abrir el carrito */
+function showCartAdded(){
+  const floatBtn=document.querySelector('#cartFloat');
+  const toast=document.querySelector('#cartAddedToast');
+  if(floatBtn){
+    floatBtn.classList.remove('cartPulse');
+    void floatBtn.offsetWidth;
+    floatBtn.classList.add('cartPulse');
+    setTimeout(()=>floatBtn.classList.remove('cartPulse'),450);
+  }
+  if(toast){
+    toast.classList.add('show');
+    clearTimeout(showCartAdded.t);
+    showCartAdded.t=setTimeout(()=>toast.classList.remove('show'),1200);
+  }
+}
+/* Escape también cierra el carrito */
+
+
+
+/* V15 — controles del carrito enlazados después de cargar todo el HTML */
+function openCart(){
+  const d=document.getElementById('cartDrawer');
+  if(!d)return;
+  renderCart();
+  d.classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeCart(){
+  const d=document.getElementById('cartDrawer');
+  if(!d)return;
+  d.classList.remove('open');
+  document.body.style.overflow='';
+}
+function sendCartWhatsApp(){
+  if(!cart.length)return;
+  const total=cart.reduce((a,x)=>a+(Number(x.price)||0)*(Number(x.qty)||0),0);
+  const lines=cart.map((x,i)=>{
+    const unit=x.priceLabel||money(x.price);
+    return `${i+1}. ${x.name} — Cantidad: ${x.qty} — ${unit} c/u`;
+  });
+  const msg=`Hola Sublimagic 👋
+Quiero realizar este pedido:
+
+${lines.join('\n')}
+
+Total: ${money(total)}
+
+¿Me ayudan a confirmar disponibilidad y personalización?`;
+  const url=`https://wa.me/18092710255?text=${encodeURIComponent(msg)}`;
+  window.location.href=url;
+}
+function bindCartControls(){
+  const open=document.getElementById('cartFloat');
+  const close=document.getElementById('cartClose');
+  const drawer=document.getElementById('cartDrawer');
+  const whatsapp=document.getElementById('cartWhats');
+  if(open) open.onclick=(e)=>{e.preventDefault();e.stopPropagation();openCart()};
+  if(close) close.onclick=(e)=>{e.preventDefault();e.stopPropagation();closeCart()};
+  if(drawer) drawer.onclick=(e)=>{if(e.target===drawer)closeCart()};
+  if(whatsapp) whatsapp.onclick=(e)=>{e.preventDefault();sendCartWhatsApp()};
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeCart()});
+  renderCart();
+}
+if(document.readyState==='loading'){
+  document.addEventListener('DOMContentLoaded',bindCartControls,{once:true});
+}else{
+  bindCartControls();
+}
+
+
+/* V17 — ubicación editable desde administración */
+const LOCATION_KEY='sublimagicLocationV17';
+function getLocationUrl(){
+  try{return localStorage.getItem(LOCATION_KEY)||''}catch(e){return ''}
+}
+function applyLocationUrl(){
+  const url=getLocationUrl();
+  const btn=document.getElementById('locationBtn');
+  const input=document.getElementById('locationUrlInput');
+  if(input)input.value=url;
+  if(btn){
+    if(url){btn.href=url;btn.classList.remove('disabled');btn.title='Abrir ubicación'}
+    else{btn.href='#';btn.classList.add('disabled');btn.title='Ubicación pendiente de configurar'}
+  }
+}
+function bindLocationAdmin(){
+  const save=document.getElementById('saveLocationBtn');
+  const clear=document.getElementById('clearLocationBtn');
+  const input=document.getElementById('locationUrlInput');
+  if(save&&input)save.onclick=()=>{
+    let url=input.value.trim();
+    if(!url){alert('Pega primero el enlace de Google Maps.');return}
+    if(!/^https?:\/\//i.test(url))url='https://'+url;
+    try{new URL(url)}catch(e){alert('Ese enlace no parece válido.');return}
+    localStorage.setItem(LOCATION_KEY,url);
+    applyLocationUrl();
+    alert('Ubicación guardada correctamente.');
+  };
+  if(clear&&input)clear.onclick=()=>{
+    localStorage.removeItem(LOCATION_KEY);
+    input.value='';
+    applyLocationUrl();
+  };
+  applyLocationUrl();
+}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',bindLocationAdmin,{once:true});
+else bindLocationAdmin();
+
+
+/* V20 — enlace de Instagram administrable */
+const INSTAGRAM_KEY='sublimagicInstagramV20';
+const DEFAULT_INSTAGRAM='https://www.instagram.com/sublimagic_16/';
+function getInstagramUrl(){
+  try{return localStorage.getItem(INSTAGRAM_KEY)||DEFAULT_INSTAGRAM}catch(e){return DEFAULT_INSTAGRAM}
+}
+function applyInstagramUrl(){
+  const url=getInstagramUrl();
+  const link=document.getElementById('topInstagramLink');
+  const input=document.getElementById('instagramUrlInput');
+  if(link)link.href=url;
+  if(input)input.value=(localStorage.getItem(INSTAGRAM_KEY)||'');
+}
+function bindInstagramAdmin(){
+  const save=document.getElementById('saveInstagramBtn');
+  const clear=document.getElementById('clearInstagramBtn');
+  const input=document.getElementById('instagramUrlInput');
+  if(save&&input)save.onclick=()=>{
+    let url=input.value.trim();
+    if(!url){alert('Pega primero el enlace de tu Instagram.');return}
+    if(!/^https?:\/\//i.test(url))url='https://'+url;
+    try{
+      const parsed=new URL(url);
+      if(!parsed.hostname.toLowerCase().includes('instagram.com')){
+        alert('Pega un enlace válido de Instagram.');
+        return;
+      }
+    }catch(e){
+      alert('Ese enlace no parece válido.');
+      return;
+    }
+    localStorage.setItem(INSTAGRAM_KEY,url);
+    applyInstagramUrl();
+    alert('Instagram guardado correctamente.');
+  };
+  if(clear&&input)clear.onclick=()=>{
+    localStorage.removeItem(INSTAGRAM_KEY);
+    input.value='';
+    applyInstagramUrl();
+    alert('Se quitó el enlace personalizado. Se usará el Instagram predeterminado.');
+  };
+  applyInstagramUrl();
+}
+if(document.readyState==='loading'){
+  document.addEventListener('DOMContentLoaded',bindInstagramAdmin,{once:true});
+}else{
+  bindInstagramAdmin();
+}
+
+</script>
+<button class="cartFloat" id="cartFloat" type="button" aria-label="Abrir carrito">🛒<span class="cartBadge" id="cartBadge">0</span></button>
+<div class="cartDrawer" id="cartDrawer">
+  <aside class="cartPanel">
+    <div class="cartHead"><h2>Mi carrito</h2><button class="cartClose" id="cartClose" type="button">✕</button></div>
+    <div class="cartItems" id="cartItems"></div>
+    <div class="cartFoot">
+      <div class="cartTotal"><span>Total</span><strong id="cartTotal">RD$0</strong></div>
+      <button class="cartWhats" id="cartWhats" type="button">Hacer mi pedido por WhatsApp</button>
+    </div>
+  </aside>
+</div>
+
+<div class="cartAddedToast" id="cartAddedToast">✓ Agregado al carrito</div>
+</body></html>
